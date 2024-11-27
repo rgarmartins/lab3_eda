@@ -67,7 +67,7 @@ def obtainId3(vgs,Is, vt, n, rs):
     return Is * (np.exp((vgs-vt-rs*Is)/(n*ut)) - 1) 
 
 #curve fitting
-[Is,vt,n,rs], pcov = curve_fit(obtainId3, df['/I2/p1 X'], df['/I2/p1 Y'])
+[Is,vt,n,rs], pcov = curve_fit(obtainId3, df['/I2/p1 X'], df['/I2/p1 Y'],p0=(1e-3,1,1))
 
 print('-------------------------ESTIMATION 3 -------------------------')
 print('Is = ', Is)
